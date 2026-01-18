@@ -1,9 +1,10 @@
-# Proyecto final ADL G91 - Frontend
+# Proyecto final ADL G91 - Backend
 
 Vivero JRB
 
 ## 👥 Integrantes
 
+<<<<<<< HEAD
 - Bárbara Larraín
 - Rosa Ramírez
 - Jorge Villegas
@@ -38,3 +39,8 @@ npm run dev
 
 forzar cambio de clave
 node scripts/fixPasswords.js     
+=======
+- [Bárbara Larraín](https://github.com/blarrain)
+- [Rosa Ramírez](https://github.com/rosaramirezroco)
+- [Jorge Villegas](https://github.com/jvillegas36)
+>>>>>>> c26f7515ea4f00811e3727d4b2c0d6636b6526f4
