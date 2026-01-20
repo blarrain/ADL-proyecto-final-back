@@ -1,5 +1,5 @@
-CREATE DATABASE "viveroJRB";
-\c "viveroJRB";
+CREATE DATABASE viveroJRB;
+\c viveroJRB;
 
 -- CATEGORIAS
 DROP TABLE IF EXISTS categoria CASCADE;

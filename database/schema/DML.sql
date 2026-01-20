@@ -3,8 +3,6 @@ INSERT INTO categoria (nombre, descripcion, activo) VALUES
 ('Plantas', 'Plantas ornamentales y aromáticas', true),
 ('Árboles Pequeños', 'Árboles frutales jóvenes para huerto', true);
 
-
-
 -- DATOS DE ARTICULOS
 INSERT INTO articulo (
     nombre,
@@ -16,6 +14,7 @@ INSERT INTO articulo (
     activo,
     fecha_creacion
 ) VALUES
+
 -- PLANTAS (id_categoria = 1)
 ('Golden Berry (Physalis)', 'Planta frutal andina conocida como golden berry o aguaymanto.', 5990, 20, 'https://images.pexels.com/photos/5945659/pexels-photo-5945659.jpeg', 1, true, '2025-01-10'),
 ('Rosa Roja', 'Planta ornamental de rosa roja para jardín.', 7990, 25, 'https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg', 1, true, '2025-01-10'),
