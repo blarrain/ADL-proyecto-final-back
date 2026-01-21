@@ -46,6 +46,26 @@ http://localhost:5000/
 | `PUT /articulos/:id` | 🔒 Privada (JWT + Admin) | Modificar artículo |
 | `DELETE /articulos/:id` | 🔒 Privada (JWT + Admin) | Eliminar artículo |
 
+### Categorias
+
+| <!-- --> | <!-- --> | <!-- --> |
+| --- | --- | --- |
+| `GET /categorias` | 🟢 Pública | Listar todos las categorias |
+| `GET /categorias/:id` | 🟢 Pública | Obtener categorias por ID |
+| `POST /categorias` | 🔒 Privada (JWT + Admin) | Crear nueva categoria |
+| `PUT /categorias/:id` | 🔒 Privada (JWT + Admin) | Modificar categoria |
+| `DELETE /categorias/:id` | 🔒 Privada (JWT + Admin) | Eliminar categoria |
+
+### Favoritos
+
+| <!-- --> | <!-- --> | <!-- --> |
+| --- | --- | --- |
+| `GET /favoritos/top` | 🟢 Pública | Listar todos los favoritos Top 10 |
+| `GET /favoritos/:id_usuario` | 🔒 Privada (JWT) | Obtener favoritos por usuario |
+| `POST /favoritos` | 🔒 Privada (JWT) | Crear nuevo favorito |
+| `DELETE /categorias/:id_usuario/id_articulo` | 🔒 Privada (JWT) | Eliminar favorito por usuario y artículo |
+
+
 ## Scripts
 
 ```sh
