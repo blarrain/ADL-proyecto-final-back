@@ -40,10 +40,11 @@ http://localhost:5000/
 | <!-- --> | <!-- --> | <!-- --> |
 | --- | --- | --- |
 | `GET /articulos` | 🟢 Pública | Listar todos los artículos |
-| `GET /articulos/:id` | 🟢 Pública | Obtener articulo por ID |
-| `POST /articulos` | 🔒 Privada (JWT + Admin) | Crear nuevo articulo |
-| `PUT /articulos/:id` | 🔒 Privada (JWT + Admin) | Modificar articulo |
-| `DELETE /articulos/:id` | 🔒 Privada (JWT + Admin) | Eliminar articulo |
+| `GET /articulos/filtros` | 🟢 Pública | Obtener artículo por filtrado, precio y categoría |
+| `GET /articulos/:id` | 🟢 Pública | Obtener artículo por ID |
+| `POST /articulos` | 🔒 Privada (JWT + Admin) | Crear nuevo artículo |
+| `PUT /articulos/:id` | 🔒 Privada (JWT + Admin) | Modificar artículo |
+| `DELETE /articulos/:id` | 🔒 Privada (JWT + Admin) | Eliminar artículo |
 
 ## Scripts
 
