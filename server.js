@@ -6,7 +6,7 @@ import artRouter from "./routes/articulos.router.js"
 import userRouter from "./routes/usuarios.router.js"
 import authRouter from "./routes/auth.router.js"
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 //MIDDLEWARE

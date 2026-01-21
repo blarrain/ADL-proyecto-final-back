@@ -1,4 +1,4 @@
-import { createArticuloModel, deleteArticuloModel, getArticuloByIdModel, getArticulosModel, updateArticuloModel } from "../models/articulosModel.js";
+import { createArticuloModel, deleteArticuloModel, getArticuloByIdModel, getArticulosFiltradosModel, getArticulosModel, updateArticuloModel } from "../models/articulosModel.js";
 
 export const getArticulos = async (req, res) => {
   try {
@@ -102,5 +102,18 @@ export const deleteArticulo = async (req, res) => {
     res.status(500).json({
       message: "Error del servidor"
     });
+  }
+};
+
+
+export const getArticulosFiltrados = async (req, res) => {
+
+  try {
+    const filters = req.query;
+    const result = await getArticulosFiltradosModel(filters);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error('Error =>', error);
+    res.status(500).json({ error: 'Error al procesar la solicitud' });
   }
 };

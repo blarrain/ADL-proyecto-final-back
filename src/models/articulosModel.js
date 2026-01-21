@@ -54,3 +54,48 @@ export const deleteArticuloModel = async (id) => {
   const {rows} = await pool.query(sql, [id]);
   return rows[0]
 };
+
+
+
+export const getArticulosFiltradosModel = async ({precio_min, precio_max, id_categoria}) => {
+  try {
+    const filtros = [];
+    let values = [];
+    let index = 1; // contador para $1, $2, etc.
+
+    if (precio_min) {
+      filtros.push(`precio >= $${index}`);
+      values.push(precio_min);
+      index++;
+    }
+
+    if (precio_max) {
+      filtros.push(`precio <= $${index}`);
+      values.push(precio_max);
+      index++;
+    }
+
+    if (id_categoria) {
+      filtros.push(`id_categoria = $${index}`);
+      values.push(id_categoria);
+      index++;
+    }
+
+    let consulta = `
+      SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria
+      FROM articulo
+      WHERE activo = true
+    `;
+
+    if (filtros.length > 0) {
+      consulta += ' AND ' + filtros.join(' AND ');
+    }
+
+    const result = await pool.query(consulta, values);
+    return result.rows;
+
+  } catch (error) {
+    console.error("Error en getArticulosFiltradosModel:", error);
+    throw error;
+  }
+};
