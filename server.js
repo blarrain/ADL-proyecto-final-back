@@ -7,6 +7,7 @@ import userRouter from "./routes/usuarios.router.js"
 import authRouter from "./routes/auth.router.js"
 import catRouter from "./routes/categorias.router.js"
 import favRouter from "./routes/favoritos.router.js"
+import pedidosRouter from "./routes/pedidos.router.js"
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -16,12 +17,14 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/articulos", artRouter);
-app.use("/usuarios",userRouter);
+app.use("/usuarios", userRouter);
 
 app.use("/auth", authRouter);
 
-app.use("/categorias",catRouter);
+app.use("/categorias", catRouter);
 
 app.use("/favoritos", favRouter)
+
+app.use("/pedidos", pedidosRouter)
 
 app.listen(PORT, console.log(`🔥 Server corriendo en http://localhost:${PORT}`))
