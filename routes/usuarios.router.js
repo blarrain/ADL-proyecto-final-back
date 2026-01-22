@@ -16,7 +16,7 @@ router.put("/cambioClave", verifyToken, usuarioChangePasswordController);
 //admin
 router.get("/", verifyToken, verifyAdmin, getAllUsuariosController);
 router.get("/:id", verifyToken, verifyAdmin, getUsuarioByIdController);
-router.put("/:id", verifyToken, updateUsuarioController);
+router.put("/:id", verifyToken, verifyAdmin, updateUsuarioController);
 router.delete("/:id", verifyToken, verifyAdmin, deleteUsuarioController);
 
 export default router;
