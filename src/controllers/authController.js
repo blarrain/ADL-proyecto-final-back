@@ -57,7 +57,7 @@ export const loginUser = async(req,res) =>{
         },
       });
     } catch (error) {
-      console.error("❌ Error al crear el usuario:", error);
+      console.error("❌ Error al iniciar sesión:", error);
       res.status(500).send("algo salió mal 😢...");
     }
 }
