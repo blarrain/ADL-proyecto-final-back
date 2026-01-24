@@ -28,3 +28,5 @@ app.use("/favoritos", favRouter)
 app.use("/pedidos", pedidosRouter)
 
 app.listen(PORT, console.log(`🔥 Server corriendo en http://localhost:${PORT}`))
+
+export { app }

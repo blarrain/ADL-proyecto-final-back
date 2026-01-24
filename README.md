@@ -65,6 +65,14 @@ http://localhost:5000/
 | `POST /favoritos` | 🔒 Privada (JWT) | Crear nuevo favorito |
 | `DELETE /categorias/:id_usuario/id_articulo` | 🔒 Privada (JWT) | Eliminar favorito por usuario y artículo |
 
+### Pedidos
+
+| <!-- --> | <!-- --> | <!-- --> |
+| --- | --- | --- |
+| `POST /pedidos` | 🟢 Pública | Crear Pedido con detalle |
+| `GET /pedidos/:id` | 🔒 Privada (JWT) | Informacion de los pedidos del usuario logeado | 
+
+
 
 ## Scripts
 
