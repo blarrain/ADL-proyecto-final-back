@@ -4,13 +4,14 @@ dotenv.config()
 
 export const verifyToken = async(req, res, next)=>{
     try {
-        const token=req.header('Authorization')
-        if(!token){
+        const authHeader = req.headers.authorization;
+        if(!authHeader){
             return res.status(401).json({message: 'el token debe estar presente'})
         }
 
-        const extractToken =token.split(' ')[1]
-        const decoded = jwt.verify(extractToken, process.env.JWT_SECRET)
+        const token = authHeader.split(' ')[1];
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
         req.user = {
           id_usuario: decoded.id_usuario,
           email: decoded.email,
@@ -20,6 +21,7 @@ export const verifyToken = async(req, res, next)=>{
         next()
 
     } catch (error) {
+        console.error('❌ verifyToken error:', error.message);
         res.status(401).json({message: 'el token es invalido'})        
     }
 }

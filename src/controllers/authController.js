@@ -1,8 +1,25 @@
-import { getUserByEmailModel } from "../models/usuariosModel.js";
+import { getUserByEmailModel, getUsuarioByIdModel } from "../models/usuariosModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
 dotenv.config()
+
+export const getMe = async (req, res) => {
+  try {
+    const { id_usuario } = req.user;
+
+    const user = await getUsuarioByIdModel(id_usuario);
+
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
+    return res.status(200).json(user);
+  } catch (error) {
+    console.error("❌ Error en getMe:", error);
+    return res.status(500).json({ message: "Error interno del servidor" });
+  }
+};
 
 export const loginUser = async(req,res) =>{
     try {
