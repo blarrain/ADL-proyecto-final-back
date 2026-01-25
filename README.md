@@ -34,6 +34,7 @@ http://localhost:5000/
 | <!-- -->           | <!-- -->   | <!-- -->                       |
 | ------------------ | ---------- | ------------------------------ |
 | `POST /auth/login` | 🟢 Pública | Login de usuario, devuelve JWT |
+| `POST /auth/me` | 🔒 Privada (JWT) | Acceso a la información del usuario |
 
 ### Articulos
 
