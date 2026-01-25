@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for ADL-proyecto-final-back/src/controllers/usuarioUpdPassController.js</title>
+    <title>Code coverage report for ADL-proyecto-final-back/routes/comunas.router.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">ADL-proyecto-final-back/src/controllers</a> usuarioUpdPassController.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">ADL-proyecto-final-back/routes</a> comunas.router.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">17.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/14</span>
+                <span class='fraction'>3/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/14</span>
+                <span class='fraction'>3/15</span>
             </div>
         
             
@@ -103,15 +103,15 @@
 <a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,15 +121,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -137,43 +131,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import bcrypt from "bcryptjs";
-import { getUserByEmailModel } from "../models/usuariosModel.js";
-import { usuarioUpdatePasswordModel } from "../models/usuarioUpdPassModel.js";
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Router } from "express";
+import https from "https";
 &nbsp;
-export const usuarioChangePasswordController = <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const { passwordActual, passwordNueva } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-    const { id_usuario, email } = <span class="cstat-no" title="statement not covered" >req.user;</span>
+const router = Router();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!passwordActual || !passwordNueva) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(400).json({</span>
-        message: "Debe ingresar password actual y nueva",
+// ignora certificado vencido
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
+&nbsp;
+router.get("/", <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >  https.get(</span>
+    "https://apis.digital.gob.cl/dpa/comunas",
+    { agent },
+<span class="fstat-no" title="function not covered" >    (a</span>piRes) =&gt; {
+      let data = <span class="cstat-no" title="statement not covered" >"";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      apiRes.on("data", <span class="fstat-no" title="function not covered" >(c</span>hunk) =&gt; (<span class="cstat-no" title="statement not covered" >data += chunk)</span>);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      apiRes.on("end", <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+          const json = <span class="cstat-no" title="statement not covered" >JSON.parse(data);</span>
+          const comunas = <span class="cstat-no" title="statement not covered" >json.map(<span class="fstat-no" title="function not covered" >(c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.nombre)</span>;</span>
+<span class="cstat-no" title="statement not covered" >          res.json(comunas);</span>
+        } catch (error) {
+<span class="cstat-no" title="statement not covered" >          console.error("❌ Parse comunas:", error.message);</span>
+<span class="cstat-no" title="statement not covered" >          res.status(500).json({ message: "Error procesando comunas" });</span>
+        }
       });
     }
+  ).on("error", <span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >    console.error("❌ HTTPS comunas:", error.message);</span>
+<span class="cstat-no" title="statement not covered" >    res.status(500).json({ message: "Error consultando comunas" });</span>
+  });
+});
 &nbsp;
-    const user = <span class="cstat-no" title="statement not covered" >await getUserByEmailModel(email);</span>
-&nbsp;
-    const isValid = <span class="cstat-no" title="statement not covered" >bcrypt.compareSync(passwordActual, user.password_hash);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!isValid) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(401).json({</span>
-        message: "Password actual incorrecta",
-      });
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    await usuarioUpdatePasswordModel(id_usuario, passwordNueva);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    return res.status(200).json({</span>
-      message: "Contraseña actualizada correctamente",
-    });
-  } catch (error) {
-<span class="cstat-no" title="statement not covered" >    console.error("Error al cambiar password:", error);</span>
-<span class="cstat-no" title="statement not covered" >    return res.status(500).json({</span>
-      message: "Error interno del servidor",
-    });
-  }
-};
+export default router;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -183,14 +183,14 @@ export const usuarioChangePasswordController = <span class="fstat-no" title="fun
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2026-01-25T21:45:33.216Z
             </div>
-        <script src="../../../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
