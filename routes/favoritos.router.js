@@ -9,8 +9,8 @@ const router = Router();
 router.get("/top", getTopFavoritos);
 
 // privadas 
-router.get("/:id_usuario",verifyToken, getFavoritosByUsuario);
+router.get("/",verifyToken, getFavoritosByUsuario);
 router.post("/", verifyToken,  createFavorito);
-router.delete("/:id_usuario/:id_articulo", verifyToken, deleteFavorito);
+router.delete("/:id_articulo", verifyToken, deleteFavorito);
 
 export default router;

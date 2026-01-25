@@ -3,7 +3,7 @@ import { createFavoritoModel, deleteFavoritoModel, getFavoritosByUsuarioModel, g
 
 export const getFavoritosByUsuario = async (req, res) => {
   try {
-    const { id_usuario } = req.params;
+    const id_usuario = req.user.id_usuario; 
     const favoritos = await getFavoritosByUsuarioModel(id_usuario);
     res.json(favoritos);
   } catch (error) {
@@ -11,20 +11,23 @@ export const getFavoritosByUsuario = async (req, res) => {
   }
 };
 
+
 export const createFavorito = async (req, res) => {
   try {
-    const { id_usuario, id_articulo } = req.body;
+    const id_usuario = req.user.id_usuario;
+    const { id_articulo } = req.body;
 
-    if (!id_usuario || !id_articulo) {
+    if (!id_articulo) {
       return res.status(400).json({
-        message: "id_usuario e id_articulo son obligatorios"
+        message: "id_articulo es obligatorio"
       });
     }
 
     const result = await createFavoritoModel(id_usuario, id_articulo);
 
     res.status(201).json({
-      id_favorito: result.id_favorito,
+      ok: true,
+      id_favorito: result?.id_favorito || null,
       message: "Favorito agregado correctamente"
     });
 
@@ -35,12 +38,15 @@ export const createFavorito = async (req, res) => {
 
 export const deleteFavorito = async (req, res) => {
   try {
-    const { id_usuario, id_articulo } = req.params;
+    const id_usuario = req.user.id_usuario;
+    const { id_articulo } = req.params;
 
     await deleteFavoritoModel(id_usuario, id_articulo);
 
-    res.json({ message: "Favorito eliminado correctamente" });
-
+    res.json({
+      ok: true,
+      message: "Favorito eliminado correctamente",
+    });
   } catch (error) {
     res.status(500).json({ message: "Error del servidor" });
   }

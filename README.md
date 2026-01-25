@@ -34,7 +34,7 @@ http://localhost:5000/
 | <!-- -->           | <!-- -->   | <!-- -->                       |
 | ------------------ | ---------- | ------------------------------ |
 | `POST /auth/login` | 🟢 Pública | Login de usuario, devuelve JWT |
-| `POST /auth/me` | 🔒 Privada (JWT) | Acceso a la información del usuario |
+| `GET /auth/me` | 🔒 Privada (JWT) | Acceso a la información del usuario |
 
 ### Articulos
 
@@ -62,9 +62,9 @@ http://localhost:5000/
 | <!-- --> | <!-- --> | <!-- --> |
 | --- | --- | --- |
 | `GET /favoritos/top` | 🟢 Pública | Listar todos los favoritos Top 10 |
-| `GET /favoritos/:id_usuario` | 🔒 Privada (JWT) | Obtener favoritos por usuario |
+| `GET /favoritos` | 🔒 Privada (JWT) | Obtener favoritos por usuario |
 | `POST /favoritos` | 🔒 Privada (JWT) | Crear nuevo favorito |
-| `DELETE /categorias/:id_usuario/id_articulo` | 🔒 Privada (JWT) | Eliminar favorito por usuario y artículo |
+| `DELETE /categorias/:id_articulo` | 🔒 Privada (JWT) | Eliminar favorito por usuario y artículo |
 
 ### Pedidos
 

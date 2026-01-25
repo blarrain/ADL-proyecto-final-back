@@ -22,6 +22,7 @@ export const createFavoritoModel = async (id_usuario, id_articulo) => {
   const sql = `
     INSERT INTO favorito (id_usuario, id_articulo)
     VALUES ($1, $2)
+    ON CONFLICT (id_usuario, id_articulo) DO NOTHING
     RETURNING id_favorito
   `;
   const { rows } = await pool.query(sql, [id_usuario, id_articulo]);
