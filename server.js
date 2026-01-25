@@ -8,6 +8,7 @@ import authRouter from "./routes/auth.router.js"
 import catRouter from "./routes/categorias.router.js"
 import favRouter from "./routes/favoritos.router.js"
 import pedidosRouter from "./routes/pedidos.router.js"
+import comunasRouter from "./routes/comunas.router.js";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -24,6 +25,7 @@ app.use("/auth", authRouter);
 app.use("/categorias", catRouter);
 
 app.use("/favoritos", favRouter)
+app.use("/comunas", comunasRouter);
 
 app.use("/pedidos", pedidosRouter)
 
