@@ -86,5 +86,7 @@ CREATE TABLE favorito (
         REFERENCES usuario(id_usuario) ON DELETE CASCADE,
     CONSTRAINT fk_favorito_articulo 
         FOREIGN KEY (id_articulo) 
-        REFERENCES articulo(id_articulo) ON DELETE CASCADE
+        REFERENCES articulo(id_articulo) ON DELETE CASCADE,
+    CONSTRAINT uq_favorito_usuario_articulo
+        UNIQUE (id_usuario, id_articulo)
 );
