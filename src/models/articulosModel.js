@@ -1,17 +1,17 @@
 import pool from "../../database/config.js"
 
 export const getArticulosModel = async () => {
-    const sql = `
-        SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria
+	const sql = `
+        SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria, fecha_creacion
         FROM articulo WHERE activo = true ORDER BY id_articulo
     `;
-    const { rows } = await pool.query(sql);
-    return rows;
+	const { rows } = await pool.query(sql);
+	return rows;
 };
 
 export const getArticuloByIdModel = async (id) => {
     const sql = `
-        SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria
+        SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria, fecha_creacion
         FROM articulo WHERE id_articulo = $1 AND activo = true
     `;
     const { rows } = await pool.query(sql, [id]);
@@ -82,7 +82,7 @@ export const getArticulosFiltradosModel = async ({precio_min, precio_max, id_cat
     }
 
     let consulta = `
-      SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria
+      SELECT id_articulo, nombre, descripcion, precio, stock, imagen_url, id_categoria, fecha_creacion
       FROM articulo
       WHERE activo = true
     `;
