@@ -13,10 +13,6 @@ import comunasRouter from "./routes/comunas.router.js";
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
-  next();
-});
 
 //MIDDLEWARE
 app.use(express.json());
