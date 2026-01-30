@@ -19,7 +19,7 @@ export const createPedidoModel = async ({ id_usuario, comuna, direccion, total, 
         for (const detalle of detalles) {
             const SQLqueryDetalle = {
                 text: 'INSERT INTO pedido_detalle (id_pedido, id_articulo, cantidad, precio_unitario) VALUES ($1, $2, $3, $4)',
-                values: [idPedido, detalle.id_articulo, detalle.cantidad, detalle.precio_unitario],
+                values: [idPedido, detalle.id_articulo, detalle.quantity, detalle.precio],
             };
             await client.query(SQLqueryDetalle);
         }
